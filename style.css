@@ -193,3 +193,27 @@ footer { background: #020202; border-top: 1px solid var(--glass-border); padding
     .section-container { padding: 60px 20px; }
     .hero-abstract { width: 300px; height: 200px; }
 }
+
+/* استایل دکمه شناور */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--accent-green);
+    color: #000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+    z-index: 999;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.floating-btn:hover { transform: scale(1.1); }
+
+/* اصلاح گرید آمار */
+.grid-3 h4 { font-size: 40px !important; color: var(--accent-green) !important; margin-bottom: 5px !important; }
