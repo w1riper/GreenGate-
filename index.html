@@ -3,70 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenGate | اوج تکنولوژی در کشاورزی</title>
-    <!-- فونت بسیار زیبای وزیرمتن -->
+    <title>GreenGate | شرکت بازرگانی بین‌المللی گرین‌گیت</title>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     
     <style>
-        /* متغیرهای رنگی به سبک iOS و اپل */
+        /* ================= متغیرهای رنگی و پایه ================= */
         :root {
-            --bg-color: #000000;
-            --glass-bg: rgba(30, 30, 30, 0.4);
+            --bg-color: #030303;
+            --glass-bg: rgba(25, 25, 25, 0.45);
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-main: #ffffff;
-            --text-muted: #86868b;
-            --accent-gold: #e5c07b;
+            --text-muted: #a1a1aa;
+            --accent-gold: #d4af37;
             --accent-green: #10b981;
-            --gold-gradient: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #ffdf73 100%);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Vazirmatn', -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* افکت هاله‌های نوری پس‌زمینه (استایل اپل) */
+        /* ================= انیمیشن ورود (Netflix Style) ================= */
+        #intro-screen {
+            position: fixed;
+            inset: 0;
+            background-color: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: hideIntro 0.5s ease 3.5s forwards;
+        }
+
+        .intro-logo {
+            font-size: 150px;
+            font-weight: 900;
+            color: var(--accent-green);
+            text-shadow: 0 0 60px rgba(16, 185, 129, 0.6);
+            opacity: 0;
+            animation: netflixEffect 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes netflixEffect {
+            0% { transform: scale(0.5); opacity: 0; }
+            15% { transform: scale(1); opacity: 1; }
+            75% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(5); opacity: 0; filter: blur(15px); }
+        }
+
+        @keyframes hideIntro {
+            to { visibility: hidden; opacity: 0; z-index: -1; }
+        }
+
+        /* ================= افکت‌های نوری پس‌زمینه ================= */
         .ambient-light {
-            position: fixed;
-            top: -20%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
-            filter: blur(80px);
-            animation: float 10s infinite alternate ease-in-out;
+            position: fixed; top: -10%; left: -10%; width: 60vw; height: 60vw;
+            background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 60%);
+            z-index: -1; filter: blur(80px);
         }
-
         .ambient-light-2 {
-            position: fixed;
-            bottom: -20%;
-            right: -10%;
-            width: 40vw;
-            height: 40vw;
-            background: radial-gradient(circle, rgba(229,192,123,0.1) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
-            filter: blur(80px);
-            animation: float 8s infinite alternate-reverse ease-in-out;
+            position: fixed; bottom: -10%; right: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 60%);
+            z-index: -1; filter: blur(80px);
         }
 
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        /* نوار ناوبری شناور و شیشه‌ای (Glassmorphism) */
+        /* ================= نوار ناوبری (Header) ================= */
         header {
             position: fixed;
             top: 20px;
@@ -74,7 +86,7 @@
             transform: translateX(-50%);
             width: 95%;
             max-width: 1200px;
-            background: var(--glass-bg);
+            background: rgba(15, 15, 15, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
@@ -82,19 +94,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            padding: 12px 30px;
             z-index: 1000;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 800;
-            background: linear-gradient(90deg, #fff, var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 22px;
+            font-weight: 900;
+            color: #fff;
             letter-spacing: 1px;
         }
+
+        .logo span { color: var(--accent-green); font-size: 28px; }
 
         nav {
             display: flex;
@@ -102,37 +114,36 @@
         }
 
         nav a {
-            color: var(--text-main);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--accent-gold);
-        }
+        nav a:hover { color: var(--accent-gold); }
 
         .contact-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            color: #fff;
+            background: var(--accent-green);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s;
+            font-size: 15px;
+            font-weight: 800;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .contact-btn:hover {
-            background: #fff;
-            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.5);
+            background: #12d494;
         }
 
-        /* بخش هیرو (معرفی اصلی) */
+        /* ================= بخش هیرو (Hero Section) ================= */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -141,305 +152,345 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            padding-top: 80px;
+            position: relative;
         }
 
-        .badge {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent-green);
-            padding: 6px 16px;
-            border-radius: 20px;
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            padding: 8px 20px;
+            border-radius: 30px;
             font-size: 14px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            margin-bottom: 20px;
+            font-weight: 700;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 30px;
             letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: clamp(40px, 6vw, 72px);
+            font-size: clamp(45px, 7vw, 90px);
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: clamp(16px, 2vw, 20px);
+            font-size: clamp(18px, 2vw, 24px);
             color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 40px;
-            font-weight: 300;
+            max-width: 900px;
+            font-weight: 400;
+            line-height: 1.9;
         }
 
-        /* کانتینر عمومی محتوا */
+        /* ================= تنظیمات عمومی سکشن‌ها ================= */
         .section-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 100px 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 60px;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 70px;
             color: #fff;
+            position: relative;
         }
 
-        /* کارت‌های شیشه‌ای */
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-gold);
+            margin: 20px auto 0;
+            border-radius: 5px;
+        }
+
+        /* ================= کارت‌های شیشه‌ای (Glass Cards) ================= */
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             border-radius: 24px;
             padding: 40px;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .glass-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(229, 192, 123, 0.3);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
         }
 
-        /* بخش درباره ما */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+        /* ================= درباره ما ================= */
+        .about-text {
+            text-align: justify;
         }
-        
         .about-text h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 32px;
             color: var(--accent-gold);
+            margin-bottom: 25px;
+            font-weight: 800;
         }
-
         .about-text p {
-            color: var(--text-muted);
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #d1d5db;
         }
 
-        /* گرید مدارک و تیم */
+        /* ================= حوزه‌های فعالیت (Grid) ================= */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        .cert-icon {
-            font-size: 40px;
+        .glass-card h4 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .glass-card p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* ================= بخش بین‌المللی (انگلیسی) ================= */
+        .english-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 120px 20px;
+            text-align: left;
+        }
+
+        .english-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .english-content h2 {
+            font-size: 50px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: var(--accent-gold);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .english-content p {
+            font-size: 20px;
+            color: #d1d5db;
+            line-height: 1.9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 300;
             margin-bottom: 20px;
         }
 
-        .cert-card h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .cert-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* کارت‌های تیم مدیریتی */
+        /* ================= تیم مدیریت ================= */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .team-card {
             text-align: center;
-            padding: 30px 20px;
-        }
-
-        .avatar-placeholder {
-            width: 100px;
-            height: 100px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            margin: 0 auto 20px;
-            border: 2px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
+            padding: 40px 20px;
         }
 
         .team-card h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #fff;
+            font-size: 22px;
+            margin-bottom: 8px;
         }
 
         .team-card span {
-            font-size: 13px;
-            color: var(--accent-gold);
+            color: var(--accent-green);
+            font-size: 15px;
+            font-weight: 700;
             letter-spacing: 0.5px;
         }
 
-        /* فوتر */
+        /* ================= فوتر ================= */
         footer {
+            background: #020202;
             border-top: 1px solid var(--glass-border);
-            padding: 60px 20px 30px;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
+            padding: 80px 20px 40px;
         }
 
-        .footer-content {
-            max-width: 1200px;
+        .footer-grid {
+            max-width: 1300px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-col h5 {
-            font-size: 18px;
-            color: #fff;
-            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
         }
 
         .footer-col p {
             color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 10px;
+            font-size: 15px;
+            margin-bottom: 15px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
         }
 
         .footer-bottom {
             text-align: center;
-            color: #555;
-            font-size: 13px;
             border-top: 1px solid var(--glass-border);
-            padding-top: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding-top: 30px;
+            color: #666;
+            font-size: 14px;
         }
 
+        /* ================= ریسپانسیو ================= */
+        @media (max-width: 900px) {
+            nav { display: none; } /* در موبایل منو مخفی می‌شود تا شلوغ نشود */
+            header { justify-content: space-between; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- افکت‌های نوری پس‌زمینه -->
+    <div id="intro-screen">
+        <div class="intro-logo">G</div>
+    </div>
+
     <div class="ambient-light"></div>
     <div class="ambient-light-2"></div>
 
-    <!-- هدر شیشه‌ای -->
     <header>
-        <div class="logo">GreenGate</div>
+        <div class="logo"><span>G</span>reenGate</div>
         <nav>
             <a href="#about">درباره شرکت</a>
-            <a href="#certificates">مجوزها</a>
-            <a href="#team">تیم مدیریت</a>
+            <a href="#services">خدمات و تجهیزات</a>
+            <a href="#global">Global Vision</a>
+            <a href="#certificates">گواهینامه‌ها</a>
+            <a href="#team">مدیران ارشد</a>
         </nav>
-        <a href="tel:02144811894" class="contact-btn">
-            <span>📞</span> ۰۲۱۴۴۸۱۱۸۹۴
-        </a>
+        <a href="tel:02144811894" class="contact-btn">📞 ۰۲۱-۴۴۸۱۱۸۹۴</a>
     </header>
 
-    <!-- بخش قهرمان (Hero) -->
     <section class="hero">
-        <div class="badge">عضو رسمی اتاق بازرگانی بین‌المللی</div>
-        <h1>آینده کشاورزی<br>در دستان شماست</h1>
-        <p>شرکت بازرگانی گرین گیت؛ واردکننده و صادرکننده انحصاری مدرن‌ترین ماشین‌آلات و ابزارآلات کشاورزی با استانداردهای روز دنیا. ما مرزهای تکنولوژی را برای برداشت بهتر جابه‌جا می‌کنیم.</p>
+        <div class="hero-badge">واردکننده انحصاری برترین برندهای جهانی</div>
+        <h1>تکنولوژی نوین،<br>کشاورزی پایدار</h1>
+        <p>شرکت بازرگانی بین‌المللی گرین‌گیت؛ پیشگام در توسعه زیرساخت‌های کشاورزی ایران از طریق واردات و صادرات پیشرفته‌ترین ماشین‌آلات، تجهیزات هوشمند و ابزارآلات صنعتی با تاییدیه رسمی از وزارت جهاد کشاورزی.</p>
     </section>
 
-    <!-- معرفی جامع شرکت -->
     <section id="about" class="section-container">
-        <div class="glass-card about-grid">
-            <div class="about-text">
-                <h3>تضمین اصالت، قدرت و پایداری</h3>
-                <p>شرکت بازرگانی گرین‌گیت (GreenGate) با سال‌ها تجربه در عرصه بین‌المللی، به عنوان یکی از قطب‌های اصلی واردات و صادرات تجهیزات و ابزارآلات کشاورزی در خاورمیانه شناخته می‌شود. هدف ما صرفاً فروش یک محصول نیست، بلکه ارتقاء سطح بهره‌وری کشاورزی از طریق تکنولوژی‌های نوین است.</p>
-                <p>ما با ایجاد یک شبکه تامین قدرتمند از برترین برندهای اروپایی و آسیایی، ماشین‌آلاتی را ارائه می‌دهیم که نه تنها عمر طولانی و عملکردی بی‌نقص دارند، بلکه با شرایط اقلیمی منطقه نیز کاملاً سازگارند. از تراکتورهای هوشمند گرفته تا سیستم‌های آبیاری قطره‌ای پیشرفته، گرین‌گیت همراه شما در مسیر توسعه است.</p>
-            </div>
+        <div class="glass-card about-text">
+            <h3>آینده را امروز درو کنید</h3>
+            <p>شرکت بازرگانی گرین‌گیت (GreenGate) با بیش از یک دهه تجربه درخشان در عرصه تجارت بین‌الملل، به عنوان یکی از ستون‌های اصلی تامین تجهیزات کشاورزی در منطقه شناخته می‌شود. رسالت ما در گرین‌گیت، پر کردن شکاف میان کشاورزی سنتی و تکنولوژی‌های مدرن جهانی است. ما با ایجاد شبکه ارتباطی قدرتمند با بزرگترین تولیدکنندگان صنعتی در اروپا و آسیا، توانسته‌ایم محصولاتی را به بازار عرضه کنیم که بهره‌وری را به حداکثر و استهلاک را به حداقل می‌رسانند.</p>
+            <p>تمامی مراحل واردات، از تخصیص ارز و مذاکرات گمرکی تا ترخیص کالا و تحویل به کشاورزان و صنعتگران عزیز، توسط تیمی از مجرب‌ترین کارشناسان بازرگانی و لجستیک صورت می‌گیرد. ما معتقدیم که پشتیبانی و خدمات پس از فروش، پایان یک معامله نیست، بلکه آغاز یک تعهد است.</p>
         </div>
     </section>
 
-    <!-- مجوزها و مدارک -->
-    <section id="certificates" class="section-container">
-        <h2 class="section-title">اعتبار و گواهینامه‌ها</h2>
+    <section id="services" class="section-container">
+        <h2 class="section-title">حوزه‌های تخصصی فعالیت</h2>
         <div class="grid-3">
-            <div class="glass-card cert-card">
-                <div class="cert-icon">🌾</div>
-                <h4>مجوز رسمی جهاد کشاورزی</h4>
-                <p>دارای تاییدیه و پروانه فعالیت رسمی از وزارت جهاد کشاورزی جمهوری اسلامی ایران جهت واردات ماشین‌آلات استراتژیک.</p>
+            <div class="glass-card">
+                <h4>ماشین‌آلات سنگین کشاورزی</h4>
+                <p>واردات انواع تراکتورهای نیمه‌سنگین و سنگین، کمباین‌های پیشرفته و تجهیزات شخم‌زنی عمیق با موتورهای کم‌مصرف و استاندارد آلایندگی یورو ۵.</p>
             </div>
-            <div class="glass-card cert-card">
-                <div class="cert-icon">🌍</div>
-                <h4>گواهینامه ISO 9001:2015</h4>
-                <p>استاندارد بین‌المللی مدیریت کیفیت که نشان‌دهنده تعهد ما به ارائه خدمات بی‌نقص در زنجیره تامین کالا می‌باشد.</p>
+            <div class="glass-card">
+                <h4>سیستم‌های آبیاری هوشمند</h4>
+                <p>تامین و تجهیز سیستم‌های آبیاری قطره‌ای و بارانی، پمپ‌های فشار قوی، و سنسورهای رطوبت‌سنج خاک با قابلیت اتصال به شبکه‌های هوشمند.</p>
             </div>
-            <div class="glass-card cert-card">
-                <div class="cert-icon">🛡️</div>
-                <h4>نشان استاندارد CE اروپا</h4>
-                <p>تمامی ابزارآلات و ماشین‌آلات وارداتی شرکت گرین‌گیت دارای تاییدیه ایمنی و سلامت اتحادیه اروپا هستند.</p>
+            <div class="glass-card">
+                <h4>ابزارآلات دقیق و باغبانی</h4>
+                <p>واردات مستقیم انواع اره‌های زنجیری، شمشادزن‌های موتوری، سم‌پاش‌های پهپادی و ابزارهای دستی با آلیاژهای ضدزنگ و عمر طولانی.</p>
             </div>
         </div>
     </section>
 
-    <!-- تیم مدیریتی -->
+    <section id="global" class="english-section" dir="ltr">
+        <div class="english-content">
+            <h2>Pioneering the Future of Global Agriculture</h2>
+            <p><strong>GreenGate International Trading Co.</strong> stands at the forefront of the agricultural revolution in the Middle East. As a premier import and export powerhouse, we specialize in sourcing cutting-edge agricultural machinery, smart irrigation systems, and heavy-duty farming tools from top-tier global manufacturers. Our commitment extends beyond mere trading; we aim to foster sustainable farming practices by introducing technologies that optimize yield and minimize environmental impact.</p>
+            <p>Equipped with an elite team of logistics experts, financial analysts, and technical engineers, GreenGate ensures a seamless supply chain. From meticulous quality control procedures in the country of origin to final delivery and comprehensive after-sales support, we guarantee excellence. All our imported machinery complies strictly with <strong>CE European Standards</strong> and holds <strong>ISO 9001:2015</strong> certifications, reflecting our unwavering dedication to quality, safety, and reliability.</p>
+        </div>
+    </section>
+
+    <section id="certificates" class="section-container">
+        <h2 class="section-title">اعتبار، مجوزها و استانداردها</h2>
+        <div class="grid-3">
+            <div class="glass-card">
+                <h4>پروانه رسمی جهاد کشاورزی</h4>
+                <p>مورد تایید سازمان جهاد کشاورزی جهت تامین نیازهای استراتژیک کشاورزان و توسعه زیرساخت‌های زراعی کشور.</p>
+            </div>
+            <div class="glass-card">
+                <h4>گواهینامه ISO 9001:2015</h4>
+                <p>استقرار سیستم مدیریت کیفیت در تمامی فرایندهای بازرگانی، فروش و خدمات پس از فروش در سطح استانداردهای جهانی.</p>
+            </div>
+            <div class="glass-card">
+                <h4>نشان CE و عضویت اتاق بازرگانی</h4>
+                <p>دارای کارت بازرگانی معتبر و عرضه محصولاتی که تمامی تست‌های ایمنی و سلامت اتحادیه اروپا را با موفقیت پشت سر گذاشته‌اند.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="team" class="section-container">
-        <h2 class="section-title">هسته مرکزی مدیریت</h2>
+        <h2 class="section-title">هسته استراتژیک و مدیریت</h2>
         <div class="team-grid">
             <div class="glass-card team-card">
-                <div class="avatar-placeholder">👨🏻‍💼</div>
                 <h4>فردین احمدی</h4>
-                <span>مدیرعامل (CEO)</span>
+                <span>مدیرعامل و رئیس هیئت مدیره (CEO)</span>
             </div>
             <div class="glass-card team-card">
-                <div class="avatar-placeholder">👨🏻‍💻</div>
                 <h4>عرفان احمدی</h4>
-                <span>مدیر فروش و بازاریابی</span>
+                <span>مدیر ارشد فروش و توسعه بازار</span>
             </div>
             <div class="glass-card team-card">
-                <div class="avatar-placeholder">👩🏻‍💼</div>
                 <h4>مریم افشاری</h4>
-                <span>مدیر واحد مالی</span>
+                <span>مدیر دپارتمان مالی و ارزی</span>
             </div>
             <div class="glass-card team-card">
-                <div class="avatar-placeholder">🛠️</div>
                 <h4>مبین احمدی</h4>
-                <span>کارشناس ارشد فنی</span>
+                <span>مدیر ارشد فنی و کنترل کیفیت</span>
             </div>
             <div class="glass-card team-card">
-                <div class="avatar-placeholder">🚢</div>
                 <h4>فریدون احمدی</h4>
-                <span>مدیر لجستیک و حمل‌ونقل</span>
+                <span>مدیر زنجیره تامین و لجستیک بین‌الملل</span>
             </div>
         </div>
     </section>
 
-    <!-- فوتر با اطلاعات کامل -->
     <footer>
-        <div class="footer-content">
+        <div class="footer-grid">
             <div class="footer-col">
-                <h5>درباره گرین گیت</h5>
-                <p>پیشگام در واردات تکنولوژی‌های روز کشاورزی و صادرات ابزارآلات با کیفیت به بازارهای جهانی. طراحی شده برای آینده.</p>
+                <h5>درباره گرین‌گیت</h5>
+                <p>ما با واردات و صادرات تخصصی ماشین‌آلات کشاورزی، زنجیره تامین شما را با بالاترین کیفیت و سریع‌ترین زمان ممکن تکمیل می‌کنیم. گرین‌گیت، نماد اطمینان در تجارت بین‌الملل.</p>
             </div>
             <div class="footer-col">
-                <h5>اطلاعات تماس</h5>
+                <h5>اطلاعات تماس دفتر مرکزی</h5>
                 <p>📍 آدرس: تهران، جنت آباد جنوبی، پایین‌تر از اداره اوقاف، ساختمان پارمیدا، طبقه ۳، واحد ۷</p>
                 <p>📞 تلفن ثابت: ۰۲۱۴۴۸۱۱۸۹۴</p>
-                <p>✉️ ایمیل: info@greengate.ir</p>
+                <p>✉️ ایمیل سازمانی: info@greengate.co</p>
             </div>
             <div class="footer-col">
-                <h5>ساعات کاری دفتر مرکزی</h5>
-                <p>شنبه تا چهارشنبه: ۸:۰۰ صبح الی ۱۷:۰۰</p>
-                <p>پنجشنبه‌ها: ۸:۰۰ صبح الی ۱۳:۰۰</p>
+                <h5>ساعات کاری و پشتیبانی</h5>
+                <p>🕒 شنبه تا چهارشنبه: ۸:۰۰ صبح الی ۱۷:۰۰</p>
+                <p>🕒 پنجشنبه‌ها: ۸:۰۰ صبح الی ۱۳:۰۰</p>
+                <p>پشتیبانی گمرکی و لجستیک به صورت ۲۴ ساعته در ایام کاری فعال می‌باشد.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2024 GreenGate Trading Company. طراحی شده با الهام از استانداردهای روز دنیا.
+            &copy; 2026 GreenGate International Trading Co. تمامی حقوق مادی و معنوی این وب‌سایت محفوظ است.
         </div>
     </footer>
 
