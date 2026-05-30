@@ -41,3 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // اجرا کردن یک بار در ابتدای کار برای المان‌هایی که از قبل تو دید هستن
     setTimeout(revealOnScroll, 3600); // زمان هماهنگ با اتمام انیمیشن ورود
 });
+
+// نمایش دکمه شناور بعد از کمی اسکرول
+const floatingBtn = document.querySelector('.floating-btn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        floatingBtn.style.display = 'flex';
+    } else {
+        floatingBtn.style.display = 'none';
+    }
+});
