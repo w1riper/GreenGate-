@@ -2,179 +2,259 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenGate | آینده کشاورزی ۲۰۲۶</title>
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>GreenGate | پیشرو در کشاورزی هوشمند ۲۰۲۶</title>
+    <meta name="description" content="شرکت بازرگانی بین المللی گرین گیت - واردات و صادرات پیشرفته‌ترین ماشین‌آلات کشاورزی، سیستم‌های آبیاری هوشمند و ابزارآلات دقیق با بالاترین استانداردهای جهانی">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- INTRO PREMIUM NETFLIX STYLE -->
     <div id="intro-screen">
-        <div class="intro-logo">G</div>
+        <div class="intro-logo-container">
+            <div class="intro-logo-text">G</div>
+            <div class="intro-sub">GreenGate</div>
+        </div>
     </div>
 
+    <!-- AMBIENT LIGHT EFFECTS -->
     <div class="ambient-light"></div>
     <div class="ambient-light-2"></div>
+    <div class="ambient-light-3"></div>
 
+    <!-- HEADER / NAVBAR -->
     <header id="navbar">
         <div class="logo"><span>G</span>reenGate</div>
-        <nav>
+        
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <nav id="nav-menu">
             <a href="#about">درباره شرکت</a>
             <a href="#services">خدمات و تجهیزات</a>
+            <a href="#products">محصولات ویژه</a>
             <a href="#global">Global Vision</a>
             <a href="#certificates">گواهینامه‌ها</a>
             <a href="#team">مدیران ارشد</a>
+            <a href="#contact">تماس با ما</a>
         </nav>
-        <a href="tel:02144811894" class="contact-btn">📞 ۰۲۱-۴۴۸۱۱۸۹۴</a>
+        
+        <a href="tel:02144811894" class="contact-btn"><i class="fas fa-phone-alt"></i> ۰۲۱-۴۴۸۱۱۸۹۴</a>
     </header>
 
-    <section class="hero reveal">
-        <div class="hero-badge">شرکت بازرگانی بین‌المللی گرین‌گیت | تامین‌کننده انحصاری</div>
-        <h1>کشاورزی را<br>با تکنولوژی ما<br>دوباره تعریف کنید</h1>
-        
-        <div class="hero-abstract"></div>
-        
-        <p>مجموعه بین‌المللی گرین‌گیت؛ پیشگام در تامین پیشرفته‌ترین ماشین‌آلات و ابزارآلات هوشمند برای زراعت پایدار در ایران. با چشم‌انداز تکنولوژیک سال ۲۰۲۶ و تاییدیه رسمی از وزارت جهاد کشاورزی.</p>
-    </section>
-
-    <section id="services" class="section-container reveal">
-        <h2 class="section-title">حوزه‌های تخصصی فعالیت ۲۰۲۶</h2>
-        <div class="grid-3">
-            <div class="glass-card">
-                <div class="card-abstract card-abstract-green"></div>
-                <h4>ابزارآلات نوری و هوشمند کشاورزی</h4>
-                <p>تامین و تجهیز ربات‌های کشاورزی، پهپادهای سنسوردار و ابزارهای دستی با سیستم‌های پایش لحظه‌ای خاک.</p>
+    <main>
+        <!-- HERO SECTION با انیمیشن لوکس -->
+        <section class="hero reveal">
+            <div class="hero-badge">
+                <i class="fas fa-globe-americas"></i> شرکت بازرگانی بین‌المللی گرین‌گیت | تامین‌کننده انحصاری
             </div>
-            <div class="glass-card">
-                <div class="card-abstract card-abstract-gold"></div>
-                <h4>ماشین‌آلات سنگین نسل جدید</h4>
-                <p>واردات مستقیم انواع تراکتورهای هوشمند، کمباین‌های هیبریدی و تجهیزات شخم‌زنی عمیق با بالاترین استانداردهای جهانی.</p>
+            <h1>کشاورزی را<br>با تکنولوژی ما<br>دوباره تعریف کنید</h1>
+            <div class="hero-abstract"></div>
+            <p>مجموعه بین‌المللی گرین‌گیت؛ پیشگام در تامین پیشرفته‌ترین ماشین‌آلات و ابزارآلات هوشمند برای زراعت پایدار در ایران. با چشم‌انداز تکنولوژیک سال ۲۰۲۶ و تاییدیه رسمی از وزارت جهاد کشاورزی.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary"><i class="fas fa-tractor"></i> مشاهده محصولات</a>
+                <a href="tel:02144811894" class="btn-secondary"><i class="fas fa-headset"></i> مشاوره فوری</a>
             </div>
-            <div class="glass-card">
-                <div class="card-abstract card-abstract-green"></div>
-                <h4>سیستم‌های آبیاری کلود-محور</h4>
-                <p>تجهیز سیستم‌های آبیاری قطره‌ای و بارانی، پمپ‌های فشار قوی و سنسورهای رطوبت‌سنج متصل به شبکه‌های ابری (Cloud).</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section-container reveal">
-        <div class="glass-card about-text">
-            <h3>آینده را امروز درو کنید</h3>
-            <p>شرکت بازرگانی گرین‌گیت (GreenGate) با بیش از یک دهه تجربه درخشان در عرصه تجارت بین‌الملل و تامین تجهیزات کشاورزی، به عنوان یکی از ستون‌های اصلی توسعه زیرساخت‌های زراعی در منطقه شناخته می‌شود. رسالت ما در گرین‌گیت، پر کردن شکاف میان کشاورزی سنتی و تکنولوژی‌های مدرن جهانی است.</p>
-            <p>تمامی مراحل واردات، از تخصیص ارز و مذاکرات گمرکی تا ترخیص کالا و تحویل به کشاورزان و صنعتگران عزیز، توسط تیمی از مجرب‌ترین کارشناسان بازرگانی و لجستیک صورت می‌گیرد. ما معتقدیم که پشتیبانی و خدمات پس از فروش، پایان یک معامله نیست، بلکه آغاز یک تعهد است.</p>
-        </div>
-    </section>
-
-    <section id="global" class="english-section reveal" dir="ltr">
-        <div class="english-content">
-            <h2>Pioneering the Future of Global Agriculture 2026</h2>
-            <p><strong>GreenGate International Trading Co.</strong> stands at the forefront of the agricultural revolution in the Middle East. As a premier import and export powerhouse, we specialize in sourcing cutting-edge agricultural machinery, smart irrigation systems, and heavy-duty farming tools from top-tier global manufacturers.</p>
-            <p>Equipped with an elite team of logistics experts, financial analysts, and technical engineers, GreenGate ensures a seamless supply chain. All our imported machinery complies strictly with <strong>CE European Standards</strong> and holds <strong>ISO 9001:2015</strong> certifications, reflecting our unwavering dedication to quality.</p>
-            
-            <div class="global-services">
-                <div class="global-card">
-                    <h4>Smart Machinery</h4>
-                    <p>Importing advanced semi-autonomous tractors and hybrid combines.</p>
+        <!-- بخش دستاوردها با شمارنده پویا -->
+        <section class="stats-section reveal">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-tractor"></i>
+                    <div class="stat-number" data-count="850">0</div>
+                    <p>دستگاه وارداتی</p>
                 </div>
-                <div class="global-card">
-                    <h4>Cloud Irrigation</h4>
-                    <p>Deploying smart irrigation systems with soil moisture sensors and cloud integration.</p>
+                <div class="stat-card">
+                    <i class="fas fa-globe"></i>
+                    <div class="stat-number" data-count="18">0</div>
+                    <p>کشور همکار</p>
                 </div>
-                <div class="global-card">
-                    <h4>Precision Tools</h4>
-                    <p>Sourcing farming drones and high-tech manual tools for maximum yield.</p>
+                <div class="stat-card">
+                    <i class="fas fa-smile"></i>
+                    <div class="stat-number" data-count="99">0</div>
+                    <p>رضایت مشتریان</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="stat-number" data-count="15">0</div>
+                    <p>سال تجربه درخشان</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="certificates" class="section-container reveal">
-        <h2 class="section-title">اعتبار، مجوزها و استانداردها</h2>
-        <div class="grid-3">
-            <div class="glass-card">
-                <h4>پروانه رسمی جهاد کشاورزی</h4>
-                <p>مورد تایید سازمان جهاد کشاورزی جهت تامین نیازهای استراتژیک کشاورزان و توسعه زیرساخت‌های زراعی کشور.</p>
+        <!-- خدمات ویژه 2026 -->
+        <section id="services" class="section-container reveal">
+            <h2 class="section-title">حوزه‌های تخصصی فعالیت ۲۰۲۶</h2>
+            <div class="grid-3">
+                <div class="glass-card service-card">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    <h4>ابزارآلات نوری و هوشمند کشاورزی</h4>
+                    <p>تامین و تجهیز ربات‌های کشاورزی، پهپادهای سنسوردار و ابزارهای دستی با سیستم‌های پایش لحظه‌ای خاک و هوش مصنوعی.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="card-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h4>ماشین‌آلات سنگین نسل جدید</h4>
+                    <p>واردات مستقیم انواع تراکتورهای هوشمند، کمباین‌های هیبریدی و تجهیزات شخم‌زنی عمیق با بالاترین استانداردهای جهانی (Euro 7).</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h4>سیستم‌های آبیاری کلود-محور</h4>
+                    <p>تجهیز سیستم‌های آبیاری قطره‌ای و بارانی، پمپ‌های فشار قوی و سنسورهای رطوبت‌سنج متصل به شبکه‌های ابری (Cloud IoT).</p>
+                </div>
             </div>
-            <div class="glass-card">
-                <h4>گواهینامه ISO 9001:2015</h4>
-                <p>استقرار سیستم مدیریت کیفیت در تمامی فرایندهای بازرگانی، فروش و خدمات پس از فروش در سطح استانداردهای جهانی.</p>
-            </div>
-            <div class="glass-card">
-                <h4>نشان CE و عضویت اتاق بازرگانی</h4>
-                <p>دارای کارت بازرگانی معتبر و عرضه محصولاتی که تمامی تست‌های ایمنی و سلامت اتحادیه اروپا را با موفقیت پشت سر گذاشته‌اند.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="team" class="section-container reveal">
-        <h2 class="section-title">هسته استراتژیک و مدیریت</h2>
-        <div class="team-grid">
-            <div class="glass-card team-card">
-                <h4>فردین احمدی</h4>
-                <span>مدیرعامل (CEO)</span>
+        <!-- محصولات ویژه با اسلایدر پیشرفته (Swiper) -->
+        <section id="products" class="section-container reveal">
+            <h2 class="section-title">پرفروش‌ترین ماشین‌آلات ۲۰۲۶</h2>
+            <div class="swiper product-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <i class="fas fa-tractor product-icon"></i>
+                            <h4>تراکتور هوشمند John Deere 9RX</h4>
+                            <p>قدرت ۶۲۰ اسب، سیستم هدایت خودکار GPS، مصرف سوخت بهینه</p>
+                            <div class="product-tag">موجود در انبار</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <i class="fas fa-helicopter product-icon"></i>
+                            <h4>پهپاد کشاورزی DJI Agras T50</h4>
+                            <p>سمپاشی هوشمند، نقشه‌برداری سه بعدی، ظرفیت ۵۰ لیتر</p>
+                            <div class="product-tag">نسخه ۲۰۲۶</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <i class="fas fa-water product-icon"></i>
+                            <h4>سیستم آبیاری Netafilm کلود</h4>
+                            <p>کنترل از راه دور، سنسورهای رطوبت، صرفه‌جویی ۴۰ درصدی آب</p>
+                            <div class="product-tag">پرفروش</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <i class="fas fa-seedling product-icon"></i>
+                            <h4>کمباین هیبریدی New Holland CR</h4>
+                            <p>برداشت هوشمند، کاهش تلفات، موتور الکتریکی-دیزلی</p>
+                            <div class="product-tag">اروپایی</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-            <div class="glass-card team-card">
-                <h4>عرفان احمدی</h4>
-                <span>مدیر ارشد فروش و بازاریابی</span>
+        </section>
+
+        <!-- درباره شرکت -->
+        <section id="about" class="section-container reveal">
+            <div class="glass-card about-text">
+                <h3><i class="fas fa-leaf"></i> آینده را امروز درو کنید</h3>
+                <p>شرکت بازرگانی گرین‌گیت (GreenGate) با بیش از یک دهه تجربه درخشان در عرصه تجارت بین‌الملل و تامین تجهیزات کشاورزی، به عنوان یکی از ستون‌های اصلی توسعه زیرساخت‌های زراعی در منطقه شناخته می‌شود. رسالت ما در گرین‌گیت، پر کردن شکاف میان کشاورزی سنتی و تکنولوژی‌های مدرن جهانی است.</p>
+                <p>تمامی مراحل واردات، از تخصیص ارز و مذاکرات گمرکی تا ترخیص کالا و تحویل به کشاورزان و صنعتگران عزیز، توسط تیمی از مجرب‌ترین کارشناسان بازرگانی و لجستیک صورت می‌گیرد. ما معتقدیم که پشتیبانی و خدمات پس از فروش، پایان یک معامله نیست، بلکه آغاز یک تعهد است.</p>
+                <div class="about-features">
+                    <span><i class="fas fa-check-circle"></i> ضمانت اصالت کالا</span>
+                    <span><i class="fas fa-clock"></i> تحویل سریع ۷ روزه</span>
+                    <span><i class="fas fa-headset"></i> پشتیبانی ۲۴ ساعته</span>
+                </div>
             </div>
-            <div class="glass-card team-card">
-                <h4>مریم افشاری</h4>
-                <span>مدیر دپارتمان مالی و ارزی</span>
+        </section>
+
+        <!-- بخش بین المللی Global Vision -->
+        <section id="global" class="english-section reveal" dir="ltr">
+            <div class="english-content">
+                <h2>Pioneering the Future of Global Agriculture 2026</h2>
+                <p><strong>GreenGate International Trading Co.</strong> stands at the forefront of the agricultural revolution in the Middle East. As a premier import and export powerhouse, we specialize in sourcing cutting-edge agricultural machinery, smart irrigation systems, and heavy-duty farming tools from top-tier global manufacturers.</p>
+                <p>Equipped with an elite team of logistics experts, financial analysts, and technical engineers, GreenGate ensures a seamless supply chain. All our imported machinery complies strictly with <strong>CE European Standards</strong> and holds <strong>ISO 9001:2015</strong> certifications, reflecting our unwavering dedication to quality.</p>
+                <div class="global-services">
+                    <div class="global-card"><h4>Smart Machinery</h4><p>Importing advanced semi-autonomous tractors and hybrid combines.</p></div>
+                    <div class="global-card"><h4>Cloud Irrigation</h4><p>Deploying smart irrigation systems with soil moisture sensors and cloud integration.</p></div>
+                    <div class="global-card"><h4>Precision Tools</h4><p>Sourcing farming drones and high-tech manual tools for maximum yield.</p></div>
+                </div>
             </div>
-            <div class="glass-card team-card">
-                <h4>مبین احمدی</h4>
-                <span>مدیر ارشد فنی و کنترل کیفیت</span>
+        </section>
+
+        <!-- گواهینامه‌ها -->
+        <section id="certificates" class="section-container reveal">
+            <h2 class="section-title">اعتبار، مجوزها و استانداردها</h2>
+            <div class="grid-3">
+                <div class="glass-card cert-card"><i class="fas fa-certificate"></i><h4>پروانه رسمی جهاد کشاورزی</h4><p>مورد تایید سازمان جهاد کشاورزی جهت تامین نیازهای استراتژیک کشاورزان و توسعه زیرساخت‌های زراعی کشور.</p></div>
+                <div class="glass-card cert-card"><i class="fas fa-award"></i><h4>گواهینامه ISO 9001:2015</h4><p>استقرار سیستم مدیریت کیفیت در تمامی فرایندهای بازرگانی، فروش و خدمات پس از فروش در سطح استانداردهای جهانی.</p></div>
+                <div class="glass-card cert-card"><i class="fas fa-shield-alt"></i><h4>نشان CE و عضویت اتاق بازرگانی</h4><p>دارای کارت بازرگانی معتبر و عرضه محصولاتی که تمامی تست‌های ایمنی و سلامت اتحادیه اروپا را با موفقیت پشت سر گذاشته‌اند.</p></div>
             </div>
-            <div class="glass-card team-card">
-                <h4>فریدون احمدی</h4>
-                <span>مدیر زنجیره تامین و لجستیک</span>
+        </section>
+
+        <!-- مدیران ارشد -->
+        <section id="team" class="section-container reveal">
+            <h2 class="section-title">هسته استراتژیک و مدیریت</h2>
+            <div class="team-grid">
+                <div class="glass-card team-card"><i class="fas fa-user-tie"></i><h4>فردین احمدی</h4><span>مدیرعامل (CEO)</span></div>
+                <div class="glass-card team-card"><i class="fas fa-chart-line"></i><h4>عرفان احمدی</h4><span>مدیر ارشد فروش و بازاریابی</span></div>
+                <div class="glass-card team-card"><i class="fas fa-coins"></i><h4>مریم افشاری</h4><span>مدیر دپارتمان مالی و ارزی</span></div>
+                <div class="glass-card team-card"><i class="fas fa-microchip"></i><h4>مبین احمدی</h4><span>مدیر ارشد فنی و کنترل کیفیت</span></div>
+                <div class="glass-card team-card"><i class="fas fa-ship"></i><h4>فریدون احمدی</h4><span>مدیر زنجیره تامین و لجستیک</span></div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- نظرات مشتریان -->
         <section class="section-container reveal">
-        <div class="grid-3">
-            <div class="glass-card" style="text-align: center;">
-                <h4>۵۰۰+</h4>
-                <p>پروژه موفق کشاورزی</p>
+            <h2 class="section-title">نظرات مشتریان معتبر</h2>
+            <div class="testimonial-grid">
+                <div class="glass-card testimonial"><i class="fas fa-quote-right"></i><p>گرین‌گیت تحولی در مزرعه ما ایجاد کرد. تراکتورهای هوشمند بهره‌وری را ۳۵ درصد افزایش دادند.</p><h5>مهندس کریمی</h5><span>مدیر مجتمع کشت و صنعت</span></div>
+                <div class="glass-card testimonial"><i class="fas fa-quote-right"></i><p>پشتیبانی و خدمات پس از فروش فوق‌العاده، قطعات یدکی اصلی در کمترین زمان ممکن.</p><h5>آقای رضاییان</h5><span>کشاورز نمونه</span></div>
+                <div class="glass-card testimonial"><i class="fas fa-quote-right"></i><p>سیستم آبیاری کلودمحور گرین گیت مصرف آب را ۴۰٪ کاهش داد و محصول باکیفیت‌تری برداشت کردیم.</p><h5>خانم موسوی</h5><span>مدیر گلخانه هوشمند</span></div>
             </div>
-            <div class="glass-card" style="text-align: center;">
-                <h4>۱۲</h4>
-                <p>کشور طرف قرارداد</p>
-            </div>
-            <div class="glass-card" style="text-align: center;">
-                <h4>۹۸٪</h4>
-                <p>رضایت کشاورزان</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <a href="tel:02144811894" class="floating-btn">📞</a>
+        <!-- فرم تماس مدرن -->
+        <section id="contact" class="section-container reveal">
+            <div class="contact-wrapper">
+                <div class="contact-info glass-card">
+                    <h3><i class="fas fa-envelope"></i> ارتباط با کارشناسان</h3>
+                    <p>برای مشاوره رایگان و استعلام قیمت فرم را تکمیل کنید.</p>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> تهران، جنت آباد جنوبی، ساختمان پارمیدا، طبقه ۳</li>
+                        <li><i class="fas fa-phone"></i> ۰۲۱-۴۴۸۱۱۸۹۴</li>
+                        <li><i class="fas fa-clock"></i> شنبه تا پنجشنبه ۸:۰۰ تا ۱۷:۰۰</li>
+                    </ul>
+                </div>
+                <form id="contact-form" class="glass-card contact-form">
+                    <input type="text" placeholder="نام و نام خانوادگی" required>
+                    <input type="tel" placeholder="شماره تماس" required>
+                    <input type="email" placeholder="ایمیل (اختیاری)">
+                    <textarea rows="4" placeholder="درخواست خود را بنویسید..."></textarea>
+                    <button type="submit" class="btn-primary">ارسال درخواست <i class="fas fa-arrow-left"></i></button>
+                    <p class="form-message" id="form-feedback"></p>
+                </form>
+            </div>
+        </section>
+    </main>
 
+    <!-- فوتر مدرن -->
     <footer>
         <div class="footer-grid reveal">
-            <div class="footer-col">
-                <h5>درباره گرین‌گیت</h5>
-                <p>ما با واردات و صادرات تخصصی ماشین‌آلات کشاورزی، زنجیره تامین شما را با بالاترین کیفیت و سریع‌ترین زمان ممکن تکمیل می‌کنیم. نماد اطمینان در تجارت بین‌الملل ۲۰۲۶.</p>
-            </div>
-            <div class="footer-col">
-                <h5>اطلاعات تماس دفتر مرکزی</h5>
-                <p>📍 آدرس: تهران، جنت آباد جنوبی، پایین‌تر از اداره اوقاف، ساختمان پارمیدا، طبقه ۳، واحد ۷</p>
-                <p>📞 تلفن ثابت: ۰۲۱-۴۴۸۱۱۸۹۴</p>
-                <p>✉️ ایمیل سازمانی: info@greengate.co</p>
-            </div>
-            <div class="footer-col">
-                <h5>ساعات کاری و پشتیبانی</h5>
-                <p>🕒 شنبه تا چهارشنبه: ۸:۰۰ صبح الی ۱۷:۰۰</p>
-                <p>🕒 پنجشنبه‌ها: ۸:۰۰ صبح الی ۱۳:۰۰</p>
-                <p>پشتیبانی گمرکی و لجستیک ۲۴ ساعته فعال می‌باشد.</p>
-            </div>
+            <div class="footer-col"><h5><i class="fas fa-tree"></i> گرین‌گیت</h5><p>ما با واردات و صادرات تخصصی ماشین‌آلات کشاورزی، زنجیره تامین شما را با بالاترین کیفیت و سریع‌ترین زمان ممکن تکمیل می‌کنیم.</p></div>
+            <div class="footer-col"><h5>اطلاعات تماس</h5><p><i class="fas fa-location-dot"></i> تهران، جنت آباد جنوبی، ساختمان پارمیدا</p><p><i class="fas fa-phone"></i> ۰۲۱-۴۴۸۱۱۸۹۴</p><p><i class="fas fa-envelope"></i> info@greengate.co</p></div>
+            <div class="footer-col"><h5>شبکه‌های اجتماعی</h5><div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-linkedin"></i><i class="fab fa-telegram"></i><i class="fab fa-whatsapp"></i></div><p>ما را در فضای مجازی دنبال کنید.</p></div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 GreenGate International Trading Co. تمامی حقوق مادی و معنوی این وب‌سایت محفوظ است. طراحی الهام‌گرفته از اکوسیستم اپل و نتفلیکس.
-        </div>
+        <div class="footer-bottom">&copy; 2026 GreenGate International Trading Co. تمامی حقوق مادی و معنوی این وب‌سایت محفوظ است.</div>
     </footer>
 
+    <a href="tel:02144811894" class="floating-btn"><i class="fas fa-headset"></i></a>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
